@@ -1,0 +1,24 @@
+git checkout -b iss53
+# Switched to new "branch iss53"
+# Shorthand for
+# git branch iss53
+# git checkout iss53
+
+# make something
+git commit -a -m 'added something [issue53]'
+
+git checkout master
+# Back to branch master
+git merge hotfix
+# Adding stuff
+
+git branch -d iss53
+# Delete branch
+
+# Conflicts
+git status
+# solve files between <<<... >>>...
+git add # on each file
+git status
+# Checkout status to make sure everything is in place
+git commit
