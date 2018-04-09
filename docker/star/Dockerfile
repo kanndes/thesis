@@ -24,7 +24,7 @@ ENV DST=/home/biodocker/bin
 RUN wget $URL/$TAR -O $DST/$TAR && \
     tar xzfv $DST/$TAR && \
     rm $DST/$TAR && \
-    mv $FOLDER/* $DST && \
+    mv -r $FOLDER/* $DST && \
 rmdir $FOLDER
 
 WORKDIR /data/
