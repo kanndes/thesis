@@ -16,7 +16,7 @@ LABEL about.tags="Genomics"
 
 MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
-RUN apt-get install rna-star
+RUN sudo apt-get install rna-star
 
 WORKDIR /data/
 
