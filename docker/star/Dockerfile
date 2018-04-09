@@ -16,18 +16,22 @@ LABEL about.tags="Genomics"
 
 MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
-ENV TAR=2.5.4b.tar.gz
-ENV URL=https://github.com/alexdobin/STAR/archive/
-ENV FOLDER=STAR-2.5.4b
-ENV DST=/home/biodocker/bin
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && apt-get install -y rna-star && apt-get clean && apt-get purge && rm -rf /var/lib/apt/lists/* /tmp/*
+USER biodocker
 
-RUN wget $URL/$TAR -O $DST/$TAR && \
-    tar xzfv $DST/$TAR && \
-    rm $DST/$TAR && \
-    cd $FOLDER/source && \
-    make STAR && \
-    cd ../.. && \
-    mv $FOLDER $DST
+#ENV TAR=2.5.4b.tar.gz
+#ENV URL=https://github.com/alexdobin/STAR/archive/
+#ENV FOLDER=STAR-2.5.4b
+#ENV DST=/home/biodocker/bin
+
+#RUN wget $URL/$TAR -O $DST/$TAR && \
+#    tar xzfv $DST/$TAR && \
+#    rm $DST/$TAR && \
+#    cd $FOLDER/source && \
+#    make STAR && \
+#    cd ../.. && \
+#    mv $FOLDER $DST
     
 WORKDIR /data/
 
