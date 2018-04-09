@@ -16,7 +16,11 @@ LABEL about.tags="Genomics"
 
 MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
-RUN apt-get update && apt-get install -y rna-star && apt-get clean && apt-get purge && rm -rf /var/lib/apt/lists/* /tmp/*
+RUN wget $URL/$TAR -O $DST/$TAR && \
+     tar xzfv $DST/$TAR && \
+     rm $DST/$TAR && \
+     mv $FOLDER $DST 
+
 
 WORKDIR /data/
 
