@@ -18,7 +18,7 @@ MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
 ENV TAR=2.5.4b.tar.gz
 ENV URL=https://github.com/alexdobin/STAR/archive/
-ENV FOLDER=2.5.4b
+ENV FOLDER=STAR-2.5.4b
 ENV DST=/home/biodocker/bin
 
 RUN wget $URL/$TAR -O $DST/$TAR && \
