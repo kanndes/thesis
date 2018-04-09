@@ -26,6 +26,7 @@ RUN wget $URL/$TAR -O $DST/$TAR && \
     rm $DST/$TAR && \
     cd $FOLDER/source && \
     make STAR && \
+    cd ../.. && \
     mv $FOLDER $DST
     
 WORKDIR /data/
