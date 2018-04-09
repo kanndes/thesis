@@ -17,6 +17,7 @@ LABEL about.tags="Genomics"
 MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
 ENV STAR_VERSION=2.5.4b
+ENV SRC /usr/local/src
 
 RUN STAR_URL="https://github.com/alexdobin/STAR/archive/${STAR_VERSION}.tar.gz" &&\
     wget -P $SRC $STAR_URL &&\
