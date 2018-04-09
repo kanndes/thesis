@@ -16,13 +16,16 @@ LABEL about.tags="Genomics"
 
 MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
-ENV STAR_VERSION=2.5.4b
-ENV SRC /usr/local/src
+ENV TAR=STAR_2.5.4b.tar.gz
+ENV URL=https://github.com/alexdobin/STAR/archive/
+ENV FOLDER=STAR_2.5.4b
+ENV DST=/home/biodocker/bin
 
-RUN STAR_URL="https://github.com/alexdobin/STAR/archive/${STAR_VERSION}.tar.gz" &&\
-    wget -P $SRC $STAR_URL &&\
-    tar -xvf $SRC/${STAR_VERSION}.tar.gz -C $SRC && \
-mv $SRC/STAR-${STAR_VERSION}/bin/Linux_x86_64_static/STAR /usr/local/bin
+RUN wget $URL/$TAR -O $DST/$TAR && \
+    tar xzfv $DST/$TAR && \
+    rm $DST/$TAR && \
+    mv $FOLDER/* $DST && \
+rmdir $FOLDER
 
 WORKDIR /data/
 
