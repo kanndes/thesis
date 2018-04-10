@@ -23,7 +23,7 @@ RUN cd $ORG_HOME && \
     git clone https://github.com/biocore/sortmerna.git && \
     cd sortmerna && \
     mkdir -p $SMR_HOME/build/Release && \
-    pushd $SMR_HOME/build/Release && \
+    #pushd $SMR_HOME/build/Release && \
     cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ../.. && \
     export PATH="$SMR_HOME/build/Release/src/indexdb:$SMR_HOME/build/Release/src/sortmerna:$PATH"
 
