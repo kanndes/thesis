@@ -6,24 +6,23 @@ FROM ei11051/base:latest
 
 LABEL base_image="base:latest"
 LABEL version="1"
-LABEL software="MEGAN"
-LABEL software.version="6.11.1"
-LABEL about.summary="microbiome data analyzer"
-LABEL about.home="http://ab.inf.uni-tuebingen.de/software/megan6/"
-LABEL about.tags="Taxonomy"
+LABEL software="sortmerna"
+LABEL software.version="1"
+LABEL about.summary="local sequence alignment tool for filtering, mapping and clustering"
+LABEL about.home="https://github.com/biocore/sortmerna"
+LABEL about.tags="Genomics"
 
 ################## MAINTAINER ######################
 
 MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
-ENV URL=http://ab.inf.uni-tuebingen.de/data/software/megan6/download/MEGAN_Community_unix_6_11_1.sh
+ENV TAR=2.5.4b.tar.gz
+ENV URL=https://github.com/alexdobin/STAR/archive/
+ENV FOLDER=STAR-2.5.4b
+ENV DST=/home/biodocker/bin
 
-RUN wget $URL && \
-    chmod +x MEGAN_Community_unix_6_11_1.sh && \
-    ./MEGAN_Community_unix_6_11_1.sh
-
-#ENV PATH ${PATH}:${DST}/STAR-2.5.4b/bin/Linux_x86_64
+RUN git clone https://github.com/biocore/sortmerna.git && \
+    cd sortmerna && \
+    bash ./build.sh
 
 WORKDIR /data/
-
-#CMD ["STAR"]
