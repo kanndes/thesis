@@ -18,7 +18,6 @@ MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
 RUN git clone https://github.com/biocore/sortmerna.git && \
     cd sortmerna && \
-    ls && \
-    bash ./build.sh
+    ./configure && make && make install
 
 WORKDIR /data/
