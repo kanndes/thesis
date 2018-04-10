@@ -16,7 +16,7 @@ LABEL about.tags="Genomics"
 
 MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
-ENV HOME /home/biodocker
+ENV HOME /home/biodocker/bin
 
 RUN cd $HOME && \
     wget http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz && tar -xzvf cufflinks-2.2.1.Linux_x86_64.tar.gz
