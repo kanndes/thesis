@@ -16,11 +16,6 @@ LABEL about.tags="Genomics"
 
 MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
-ENV TAR=2.5.4b.tar.gz
-ENV URL=https://github.com/alexdobin/STAR/archive/
-ENV FOLDER=STAR-2.5.4b
-ENV DST=/home/biodocker/bin
-
 RUN git clone https://github.com/biocore/sortmerna.git && \
     cd sortmerna && \
     bash ./build.sh
