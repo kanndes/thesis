@@ -27,7 +27,7 @@ ENV PATH ${PATH}:${HOME}/cufflinks-2.2.1.Linux_x86_64/
 RUN wget http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/test_data.sam && \
     ls && \
     cufflinks ./test_data.sam && \
-    ls
+    head transcripts.gtf
 
 WORKDIR /data/
 
