@@ -16,15 +16,15 @@ LABEL about.tags="Genomics"
 
 MAINTAINER Nelson Rafael <ei11051@fe.up.pt>
 
-#ENV DST=/home/biodocker/bin
+ENV ORG_HOME=/home/biodocker
+ENV SMR_HOME=/home/biodocker/sortmerna
 
-RUN git clone https://github.com/biocore/sortmerna.git && \
+RUN cd $ORG_HOME && \
+    git clone https://github.com/biocore/sortmerna.git && \
     cd sortmerna && \
-    pwd && \
-    ./configure && make && make install
-    
-#    mkdir -p $SMR_HOME/build/Release
-#pushd $SMR_HOME/build/Release
-#cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ../..
+    mkdir -p $SMR_HOME/build/Release && \
+    pushd $SMR_HOME/build/Release && \
+    cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ../.. && \
+    export PATH="$SMR_HOME/build/Release/src/indexdb:$SMR_HOME/build/Release/src/sortmerna:$PATH"
 
 WORKDIR /data/
