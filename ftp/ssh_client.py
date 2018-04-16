@@ -4,7 +4,7 @@ server = 'magalhaes01.grid.fe.up.pt'
 user = 'ei11051'
 password = 'sporting2018'
 
-def send_command(command):
+def sendCommand(command):
     var = pxssh.pxssh()
     if not var.login(server, user, password):
         print("SSH session failed on login.")
