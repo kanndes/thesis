@@ -65,5 +65,5 @@ def createSpecificDir(user, folder):
 #uploadFile('test01', 'example2.fai', 'example2.fai')
 #downloadFile('test01', 'raw/example2.fai', 'example3.fa')
 #listFiles('test01', 'raw')
-createSpecificDir('test01', 'tophat')
+#createSpecificDir('test01', 'tophat')
 #ssh_client.send_command("docker run ei11051/tophat")
