@@ -60,6 +60,7 @@ def createSpecificDir(user, folder):
     ftp.cwd(folder)
     ftp.mkd(current_time)
     ftp.quit()
+    return current_time
     
 #createNewUserDir('test01')
 #uploadFile('test01', 'example2.fai', 'example2.fai')
